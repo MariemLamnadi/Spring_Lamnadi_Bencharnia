@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout/default}">
+
+<head>
+	<title>Connexion</title>
+</head>
+
+<body>
+	<section layout:fragment="contenu">
+	<div class="card">
+	<div class="card-body">
+		<form th:action="@{/admin/users/addDev}" th:object="${user}" method="post">
+			<input   type="text" name="id" hidden
+					th:field="*{id}" />
+			<div class="form-floating"> user name: <input class="form-control"  type="text" name="userName"
+					th:field="*{userName}" /></div>
+			<div class="form-floating"> Password: <input class="form-control" type="password" id="password"
+					name="password" th:field="*{password}" required autofocus="autofocus" /></div>
+			<div><button class="btn btn-primary" type="submit">Enregistrer</button></div>
+        </form></div></div>
+	</section>
+
+
+
+</body>
+
+</html>
